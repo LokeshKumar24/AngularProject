@@ -1,0 +1,32 @@
+<form #form="ngForm" (ngSubmit)="sendMessage(form.value)">
+ <div class="container">
+    <div class="file-names">
+        <span class="head">File Names</span>
+        <div class="file-tabs"  >
+            <div class="tabs" *ngFor="let obj of newData.shareData">
+                <input type="button" value="File {{obj.id}}" id={{obj.id}}
+                (click)="getData(obj.data)">
+            </div>
+      
+        </div>  
+        <div class="file" >
+            <input type="button" value="AddFile"
+             (click)="AddData()">
+        </div>
+    </div>
+    <div class="information">
+        <span class="header">Information 
+            <input type="submit" value="Save" >     
+        </span>
+             
+        <div class="content">
+            <textarea  cols="30" rows="36" ngModel name='data' 
+            [(ngModel)]="singleData" >
+        
+
+            </textarea>
+    </div>
+</div>
+</div>
+</form>
+{{dataAdded}}
